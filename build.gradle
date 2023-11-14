@@ -16,6 +16,14 @@ dependencies {
     implementation 'io.grpc:grpc-kotlin-stub:1.4.0'
     implementation 'com.google.protobuf:protobuf-java:3.25.0'
     implementation 'com.google.protobuf:protobuf-kotlin:3.25.0'
+
+    implementation 'com.linecorp.armeria:armeria:1.25.2'
+    implementation 'com.linecorp.armeria:armeria-bom:1.25.2'
+    implementation 'com.linecorp.armeria:armeria-logback:1.25.2'
+    implementation 'com.linecorp.armeria:armeria-kotlin:1.25.2'
+    implementation 'com.linecorp.armeria:armeria-grpc:1.25.2'
+    implementation 'com.linecorp.armeria:armeria-grpc-protocol:1.25.2'
+
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
