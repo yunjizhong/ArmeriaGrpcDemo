@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.9.0'
     id 'application'
+    id 'com.google.protobuf' version '0.9.4'
 }
 
 group = 'org.example'
@@ -11,6 +12,10 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.grpc:grpc-protobuf:1.59.0'
+    implementation 'io.grpc:grpc-kotlin-stub:1.4.0'
+    implementation 'com.google.protobuf:protobuf-java:3.25.0'
+    implementation 'com.google.protobuf:protobuf-kotlin:3.25.0'
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
 
@@ -24,4 +29,24 @@ kotlin {
 
 application {
     mainClassName = 'MainKt'
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.17.3'
+    }
+    plugins {
+        grpc {
+            artifact = "io.grpc:protoc-gen-grpc-java:1.43.1"
+        }
+        grpckt {
+            artifact = "io.grpc:protoc-gen-grpc-kotlin:1.1.0:jdk7@jar"
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+            grpckt {}
+        }
+    }
 }
