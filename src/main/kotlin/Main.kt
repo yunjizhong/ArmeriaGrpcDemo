@@ -10,7 +10,7 @@ fun main() {
             .addService(HelloService())
             .build(),
         LoggingService.newDecorator()
-    ).port(50051, SessionProtocol.H2C)
+    ).port(8000, SessionProtocol.HTTP)
     val server = sb.build()
     server.start().join()
 }

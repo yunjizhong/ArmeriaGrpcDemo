@@ -41,11 +41,11 @@ application {
 
 protobuf {
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.17.3'
+        artifact = 'com.google.protobuf:protoc:3.25.0'
     }
     plugins {
         grpc {
-            artifact = "io.grpc:protoc-gen-grpc-java:1.43.1"
+            artifact = "io.grpc:protoc-gen-grpc-java:1.59.0"
         }
         grpckt {
             artifact = "io.grpc:protoc-gen-grpc-kotlin:1.1.0:jdk7@jar"
